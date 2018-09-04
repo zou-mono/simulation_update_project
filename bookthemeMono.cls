@@ -122,7 +122,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{titletoc}   % 用于目录
 \titlecontents{chapter}[0em]{\zihao{4}}{\contentslabel{1.5em}\qquad}
-     {0pt}{\hfill\zihao{-4}\contentspage}
+     {\hspace*{-1.5em}}{\hfill\zihao{-4}\contentspage}
 % \titlecontents{section}[2em]{\addvspace{0em}}{\contentslabel{1.8em}\hspace{1em}}
 %      {\hspace*{-2.3em}}{\titlerule*[8pt]{$\cdot$}\contentspage}[\addvspace{0em}] %增加行间距
 \titlecontents{section}[2em]{}{\contentslabel{1.8em}\hspace{1em}}
