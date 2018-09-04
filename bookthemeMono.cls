@@ -9,6 +9,9 @@
 \setlength{\lineskip}{3pt}
 
 \newcommand{\cyear}{2017}  %仿真更新项目的年份
+\renewcommand\contentsname{\ziju{1}目录}
+\renewcommand\listfigurename{插图目录}
+\renewcommand\listtablename{表格目录}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置中文字体
@@ -91,19 +94,45 @@
 \titleformat*{\section}{\centering\Large\bfseries}
 \titleformat{\subsubsection}[hang]{\bfseries\large}{\rule{1.5ex}{1.5ex}}{0.5em}{}
 \ctexset{
+    chapter/name = {第,章},
+    chapter/number = \arabic{chapter},
     section/name = {\S}}   %标题前面加标记
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 页眉和页脚样式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fancyhdr}
-\fancyhf{}
-\fancyhead[EC]{\textnormal{\kaishu\leftmark}}
-\fancyhead[OC]{\textnormal{\kaishu\@title}}
-\fancyhead[ER,OR]{--\ \thepage\ --}
-\fancyfoot{}
 
-\pagestyle{fancy}
+\fancypagestyle{mainhdr}{
+    \fancyhf{}
+    \fancyhead[EC]{\textnormal{\kaishu\leftmark}}
+    \fancyhead[OC]{\textnormal{\kaishu\@title}}
+    \fancyhead[ER,OR]{--\ \thepage\ --}
+    \fancyfoot{}}
+
+\fancypagestyle{tochdr}{
+    \fancyhf{}
+    \fancyhead[EC]{\textnormal{\kaishu\contentsname}}
+    \fancyhead[OC]{}
+    \fancyhead[ER]{--\ \thepage\ --}
+    \fancyfoot{}}
+
+\fancypagestyle{lofhdr}{
+    \fancyhf{}
+    \fancyhead[EC]{\textnormal{\kaishu\listfigurename}}
+    \fancyhead[OC]{}
+    \fancyhead[ER]{--\ \thepage\ --}
+    \fancyfoot{}}
+
+\fancypagestyle{lothdr}{
+    \fancyhf{}
+    \fancyhead[EC]{\textnormal{\kaishu\listtablename}}
+    \fancyhead[OC]{}
+    \fancyhead[ER]{--\ \thepage\ --}
+    \fancyfoot{}}
+
+\pagestyle{mainhdr}
+%\pagestyle{fancy}
 
 %\renewcommand\chaptermark[1]{\markright{\CTEXifname{\CTEXthechapter~~~}{}#1}}
 %\renewcommand\chaptermark[1]{\markboth{\CTEXifname{\CTEXthechapter~~~}{}#1}}
@@ -114,7 +143,7 @@
 \renewcommand\frontmatter{%
     \cleardoublepage
   \@mainmatterfalse
-  \thispagestyle{fancy} 
+  %\thispagestyle{empty} 
   \pagenumbering{Roman}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,48 +159,46 @@
 \titlecontents{subsection}[4em]{}{\contentslabel{1.8em}\hspace{1em}}
      {\hspace*{-2.3em}}{\titlerule*[8pt]{$\cdot$}\contentspage}
 
-\renewcommand\contentsname{\ziju{1}目录}
-\makeatletter
 \newcommand{\tocformat}[1]{{\zihao{2}\bf#1}}
 \renewcommand\tableofcontents{%
-\thispagestyle{empty}%
+\if@openright\cleardoublepage\else\clearpage\fi 
     \if@twocolumn
       \@restonecoltrue\onecolumn
     \else
       \@restonecolfalse
     \fi
-
 \mbox{}\hfill{\tocformat{\contentsname}}\hfill\mbox{}
-
 \vspace{20pt}
 \@starttoc{toc}
+\thispagestyle{tochdr}%
 \if@restonecol\twocolumn\fi}
 
-\renewcommand\contentsname{\ziju{1}目录}
-% \renewcommand{\tocformat}[1]{{\zihao{2}\bf#1}}
-% \renewcommand\tableofcontents{%
-% \thispagestyle{empty}%
-%     \if@twocolumn
-%       \@restonecoltrue\onecolumn
-%     \else
-%       \@restonecolfalse
-%     \fi
+\renewcommand\listoffigures{%
+\if@openright\cleardoublepage\else\clearpage\fi 
+\thispagestyle{empty}%
+\mbox{}\hfill{\tocformat{\listfigurename}}\hfill\mbox{}
+\vspace{20pt}
+\@starttoc{lof}}
 
-% \hspace{-1em}\mbox{}\hfill{\tocformat{\contentsname}}\hfill\mbox{}
-
-% \vspace{20pt}
-% \@starttoc{toc}
-% \if@restonecol\twocolumn\fi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 章节样式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\chapter{%\if@openright\cleardoublepage\else\clearpage\fi   %如果不想出现偶数页空白可以把\cleardoublepage改成\clearpage
                     \if@openright\clearpage\else\clearpage\fi
-                    \thispagestyle{fancy}% 
+                    \thispagestyle{mainhdr}% 
                     \global\@topnum\z@
                     \@afterindentfalse
                     \secdef\@chapter\@schapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 正文样式
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \renewcommand\mainmatter{%
+%   \cleardoublepage
+%   \@mainmattertrue
+%   \thispagestyle{mainhdr} 
+%   \pagenumbering{arabic}}
 
 \RequirePackage{hyperref}       % hyperref 宏包通常要求放在导言区的最后!!!
 \hypersetup{CJKbookmarks, %
