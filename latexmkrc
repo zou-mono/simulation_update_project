@@ -1,5 +1,5 @@
 $pdf_mode=1;
-$pdflatex="xelatex -file-line-error -synctex=1 -interaction=nonstopmode --shell-escape %O %S; xelatex -file-line-error -synctex=1 -interaction=nonstopmode --shell-escape %O %S";
+$pdflatex="xelatex -file-line-error -synctex=1 -interaction=nonstopmode --shell-escape %O %S;xelatex -file-line-error -synctex=1 -interaction=nonstopmode --shell-escape %O %S";
 $recorder=1;
 $pdf_previewer="start xdg-open %S";
 $preview_continuous_mode = 1;
