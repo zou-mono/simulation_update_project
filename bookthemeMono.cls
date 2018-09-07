@@ -6,6 +6,7 @@
 \LoadClass[a4paper, zihao=-4, linespread=1.5, heading=true]{ctexbook} 
 
 \RequirePackage{bbding}
+\RequirePackage{afterpage}
 % 最小行间间距设定
 \setlength{\lineskiplimit}{3pt} 
 \setlength{\lineskip}{3pt}
@@ -244,21 +245,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[inline]{enumitem}
 %\RequirePackage{paralist}
-    \setlist[enumerate]{font=\bfseries,itemsep=0pt} %font是设置label的字体，不是所有文字
-    \setlist[itemize]{font=\bfseries} %,
+    \setlist[enumerate]{itemsep=0pt} %font是设置label的字体，不是所有文字
+    %\setlist[itemize]{} %,
     \setlist[description]{font=\bfseries\uline}
 
 \newenvironment{neae}{
-    \begin{enumerate}[parsep=0pt,topsep=0pt,partopsep=0pt]}
+    \begin{enumerate}[font=\bfseries,parsep=0pt,topsep=0pt,partopsep=0pt]}
     {\end{enumerate}} %数字enumerate
 \newenvironment{para}{
     \begin{description}[itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]}
     {\end{description}}
 \newenvironment{feai}{
-    \begin{itemize}[itemsep=0pt,topsep=0pt,partopsep=0pt,itemindent=2\ccwd,leftmargin=0pt]} %
+    \begin{itemize}[font=\bfseries,itemsep=0pt,topsep=0pt,partopsep=0pt,itemindent=2\ccwd,leftmargin=0pt]} %
     {\end{itemize}} %item文字缩进，换行后对齐左边线，配合indenttext使用
 \newenvironment{nbeae}{
-    \begin{enumerate}[font=\bfseries,wide=0pt,nosep,label=(\arabic*),itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]}
+    \begin{enumerate}[wide=0pt,nosep,label=(\arabic*),itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]}
     {\end{enumerate}} %带括号的数字enumerate,例如(1),(2)
 \newenvironment{inlinee}
 {\begin{enumerate*}[label=(\arabic*), font=\rmfamily, before=\unskip{：},itemjoin={{；}},itemjoin*={{，以及：}}]}
@@ -278,7 +279,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 图表样式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{booktabs}   % 三线表
 \RequirePackage{caption}
+\RequirePackage{longtable}
+\RequirePackage{tabularx}
+\RequirePackage{tabu}
+\RequirePackage{multirow}
 \captionsetup[figure]{font=bf}
 \captionsetup[table]{font=bf, format=hang,singlelinecheck=false,justification=RaggedRight}  %修改表标题的格式
 \captionsetup[subtable]{font=small, position=top, farskip=15pt,topadjust=-16pt,captionskip=0pt,%
@@ -290,6 +296,15 @@
 \newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
 \newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
 \newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+\newcolumntype{e}{@{\extracolsep{\fill}}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% \renewenvironment{longtabu}[2][c]{%
+% \begin{longtabu}[#1]{#2}  
+% }{\addtocounter{table}{-1}\end{longtabu}}
+
+%\renewcommand\floatpagefraction{0.8} %% default value: 0.5
+%\renewcommand\topfraction{0.8}       %% default value: 0.7
 
 % \newlist{myprose}{enumerate}{1}
 % \setlist[myprose,1]{
