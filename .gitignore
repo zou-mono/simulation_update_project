@@ -20,7 +20,6 @@
 *.lock*
 *.swp*
 *.listing
-*.pdf
 *.lof
 *.lot
 /chapter/auto

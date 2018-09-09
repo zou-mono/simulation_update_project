@@ -258,6 +258,9 @@
 \newenvironment{feai}{
     \begin{itemize}[font=\bfseries,itemsep=0pt,topsep=0pt,partopsep=0pt,itemindent=2\ccwd,leftmargin=0pt]} %
     {\end{itemize}} %item文字缩进，换行后对齐左边线，配合indenttext使用
+\newenvironment{cit}{
+    \begin{itemize}[font=\bfseries,label=\PencilRight,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]} %
+    {\end{itemize}} %自定义itemize
 \newenvironment{nbeae}{
     \begin{enumerate}[wide=0pt,nosep,label=(\arabic*),itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]}
     {\end{enumerate}} %带括号的数字enumerate,例如(1),(2)
@@ -276,6 +279,15 @@
 \newcommand{\fref}[1]{图\ref{#1}}
 \newcommand{\tref}[1]{表\ref{#1}}
 
+\RequirePackage{tcolorbox}
+\tcbuselibrary{listings}
+\tcbset{listing engine=listings}
+\newtcblisting{scriptcode}{
+    listing only,
+    colback=white!75!black,
+    colframe=black!75!white,
+    fontupper=\bfseries\zihao{-4}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 图表样式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -285,12 +297,16 @@
 \RequirePackage{tabularx}
 \RequirePackage{tabu}
 \RequirePackage{multirow}
+\RequirePackage{subfig}
+\RequirePackage{placeins}
+\RequirePackage{float}
+\RequirePackage{makecell}
 \captionsetup[figure]{font=bf}
 \captionsetup[table]{font=bf, format=hang,singlelinecheck=false,justification=RaggedRight}  %修改表标题的格式
-\captionsetup[subtable]{font=small, position=top, farskip=15pt,topadjust=-16pt,captionskip=0pt,%
+\captionsetup[subtable]{font={bf,small}, position=top, farskip=2pt,topadjust=0pt,captionskip=0pt,%
                         nearskip=5pt,margin=0pt}
-\captionsetup[subfigure]{font=small, position=bottom, farskip=5pt,topadjust=0pt,captionskip=3pt,%
-                        nearskip=5pt,margin=0pt}
+\captionsetup[subfigure]{font={bf,small}, position=bottom, farskip=5pt,topadjust=0pt,captionskip=3pt,%
+                        nearskip=5pt,margin=0pt}                                               
 
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
 \newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
@@ -299,6 +315,13 @@
 \newcolumntype{e}{@{\extracolsep{\fill}}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
+\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
+
+% \AtBeginDocument{%
+%   \expandafter\renewcommand\expandafter\subsection\expandafter{%
+%     \expandafter\@fb@secFB\subsection
+%   }%
+% }
 % \renewenvironment{longtabu}[2][c]{%
 % \begin{longtabu}[#1]{#2}  
 % }{\addtocounter{table}{-1}\end{longtabu}}
