@@ -110,7 +110,7 @@
 
 \titleformat{\chapter}[block]{\LARGE\sffamily}{}{0pt}{\chaformat}
 \titleformat*{\section}{\centering\Large\bfseries}
-\titleformat{\subsubsection}[hang]{\bfseries\large}{\rule{1.5ex}{1.5ex}}{0.5em}{}
+%\titleformat{\subsubsection}[hang]{\bfseries\large}{\rule{1.5ex}{1.5ex}}{0.5em}{}
 \ctexset{
     chapter/name = {第,章},
     chapter/number = \arabic{chapter},
@@ -262,7 +262,7 @@
     \begin{itemize}[font=\bfseries,label=\PencilRight,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]} %
     {\end{itemize}} %自定义itemize
 \newenvironment{nbeae}{
-    \begin{enumerate}[wide=0pt,nosep,label=(\arabic*),itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]}
+    \begin{enumerate}[wide=0pt,nosep,label=(\arabic*),itemsep=0pt,itemindent=2.5\ccwd, parsep=0pt,topsep=0pt,partopsep=0pt]}
     {\end{enumerate}} %带括号的数字enumerate,例如(1),(2)
 \newenvironment{inlinee}
 {\begin{enumerate*}[label=(\arabic*), font=\rmfamily, before=\unskip{：},itemjoin={{；}},itemjoin*={{，以及：}}]}
@@ -309,7 +309,7 @@
                         nearskip=5pt,margin=0pt}                                               
 
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
-\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 \newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
 \newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
 \newcolumntype{e}{@{\extracolsep{\fill}}}
