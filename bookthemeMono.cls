@@ -120,34 +120,37 @@
 % 页眉和页脚样式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fancyhdr}
+\usepackage{perpage} %页脚每页重新从1开始编号
+\MakePerPage{footnote}
+\usepackage{tablefootnote} %表格内部的页脚引用
 
 \fancypagestyle{mainhdr}{
     \fancyhf{}
     \fancyhead[EC]{\textnormal{\kaishu\leftmark}}
     \fancyhead[OC]{\textnormal{\kaishu\@title}}
     \fancyhead[EL,OR]{--\ \thepage\ --}
-    \fancyfoot{}}
+    \fancyfoot[F]{\kaishu}}
 
 \fancypagestyle{tochdr}{
     \fancyhf{}
     \fancyhead[EC]{\textnormal{\kaishu\contentsname}}
     \fancyhead[OC]{\textnormal{\kaishu\@title}}
-    \fancyhead[EL,OR]{--\ \thepage\ --}
-    \fancyfoot{}}
+    \fancyhead[EL,OR]{--\ \thepage\ --}}
+    % \fancyfoot{}}
 
 \fancypagestyle{lofhdr}{
     \fancyhf{}
     \fancyhead[EC]{\textnormal{\kaishu\listfigurename}}
     \fancyhead[OC]{\textnormal{\kaishu\@title}}
-    \fancyhead[EL,OR]{--\ \thepage\ --}
-    \fancyfoot{}}
+    \fancyhead[EL,OR]{--\ \thepage\ --}}
+    % \fancyfoot{}}
 
 \fancypagestyle{lothdr}{
     \fancyhf{}
     \fancyhead[EC]{\textnormal{\kaishu\listtablename}}
     \fancyhead[OC]{\textnormal{\kaishu\@title}}
-    \fancyhead[EL,OR]{--\ \thepage\ --}
-    \fancyfoot{}}
+    \fancyhead[EL,OR]{--\ \thepage\ --}}
+    % \fancyfoot{}}
 
 \pagestyle{mainhdr}
 
@@ -279,15 +282,27 @@
 \newcommand{\fref}[1]{图\ref{#1}}
 \newcommand{\tref}[1]{表\ref{#1}}
 
-\RequirePackage{tcolorbox}
+\RequirePackage[enhanced,many]{tcolorbox}
 \tcbuselibrary{listings}
 \tcbset{listing engine=listings}
 \newtcblisting{scriptcode}{
     listing only,
+    breakable,
     colback=white!75!black,
     colframe=black!75!white,
-    fontupper=\bfseries\zihao{-4}
-}
+    fontupper=\bfseries\zihao{-4}}
+\newtcblisting{examplecode}{
+    listing only,
+    breakable,
+    colback=white,
+    colframe=black,
+    sharp corners=all,
+    fontupper=\bfseries\zihao{-4}}
+% \newtcbox{\iscriptcode}[1][orange!70!red]{on line,
+%   before upper={\rule[-0.2ex]{0pt}{1ex}\ttfamily},
+%   colback=white!75!black,
+%   boxsep=0pt,left=1.5pt,right=1.5pt,top=1pt,bottom=1pt,
+%   boxrule=1pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 图表样式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -301,6 +316,9 @@
 \RequirePackage{placeins}
 \RequirePackage{float}
 \RequirePackage{makecell}
+
+\graphicspath{{figures/}} %%图片文件路径
+
 \captionsetup[figure]{font=bf}
 \captionsetup[table]{font=bf, format=hang,singlelinecheck=false,justification=RaggedRight}  %修改表标题的格式
 \captionsetup[subtable]{font={bf,small}, position=top, farskip=2pt,topadjust=0pt,captionskip=0pt,%
@@ -310,6 +328,7 @@
 
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{B}[1]{>{\centering\arraybackslash\baselineskip=14pt}m{#1}}
 \newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
 \newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
 \newcolumntype{e}{@{\extracolsep{\fill}}}
