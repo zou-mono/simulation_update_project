@@ -26,7 +26,7 @@
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{chp03_数据挖掘系统结构.jpg}
+  \includegraphics[width=0.85\textwidth]{chp03_数据挖掘系统结构.jpg}
   \caption{数据挖掘系统结构\label{fig:chp03_数据挖掘系统结构} }
 \end{figure}
 
@@ -138,10 +138,10 @@ RAW 开头，以下是所有清洗后数据表信息的说明。
   & & 断面流量 & metro\_segment\_flow\_* \\\cline{3-4} 
   & & 小区流量 & metro\_zone\_flow\_* \\\cline{3-4}
   & & 吸引点流量 & metro\_sap\_flow\_* \\\cline{3-4}
-  & & 站点 OD & metro\_od\_flow\_* \\\hline
-  & & 出行 OD & metro\_od\_zone\_flow\_* \\\cline{3-4}
+  & & 站点 OD & metro\_od\_flow\_* \\\cline{3-4}
   & & \multirow{2}*{换乘} & metro\_transfer\_line\_flow\_* \\
-  & & & metro\_transfer\_station\_flow\_* \\\cline{3-4}
+  & & & metro\_transfer\_station\_flow\_* \\\hline
+  & & 出行 OD & metro\_od\_zone\_flow\_* \\\cline{3-4}
   & & \multirow{2}*{平均距离} & metro\_dst\_man \\
   & & & metro\_net\_dst\_mean \\ \cline{3-4}
   & & \multirow{3}*{距离分布} & metro\_dst\_distance \\
@@ -171,7 +171,7 @@ RAW 开头，以下是所有清洗后数据表信息的说明。
 由于在深圳市交通仿真系统（ 二期） 已建成的系统中， 已经建立了数据挖掘
 系统后台中间数据库与数据查询系统后台指标数据库相关表的对应关系，因此数
 据汇总工作可以由程序自动化完成。 数据汇总后， 数据查询系统指标数据库中的
-主要指标\tref{tbl:}所示。\vfill
+主要指标\tref{tbl:数据汇总后的交通指标}所示。\vfill
 
 \begin{table}[!htpb]\centering
 \renewcommand{\arraystretch}{1.2}
@@ -196,7 +196,7 @@ RAW 开头，以下是所有清洗后数据表信息的说明。
 统，系统将自动执行这些任务，并将执行结果返回并入库。
 
 \subsection{定义批处理配置文件}
-批处理配置文件是自定义脚本文件，每行定义一个任务,所有任务都包含三个字段：
+批处理配置文件是自定义脚本文件，每行定义一个任务，所有任务都包含三个字段：
 
 \begin{scriptcode}
 GID;ID;TASK TYPE
@@ -256,7 +256,7 @@ GID;ID;[a|b|c|d|A|B|C|D];TASK;PHASE
 \item \qd{bus}：表示巴士数据挖掘任务
 \item \qd{road}：表示道路数据挖掘任务
 \item \qd{taxi}：表示出租车数据挖掘任务
-\item \qd{db}：表示数据库操作任务(只能用于 d 或 D 任务类型)
+\item \qd{db}：表示数据库操作任务（只能用于 d 或 D 任务类型）
 \end{cit}
 \item [PHASE] 任务名称，为具体数据挖掘算法的执行步骤
 \end{para}
@@ -319,7 +319,7 @@ GID;ID;[c|C];TASK;PHASE;ANNUAL
 \item 重建目标表的索引（加快后续的数据分析速度）
 \end{nbeae}
 
-因此,定义了 D 类型的数据库操作任务来完成上述过程：
+因此，定义了 D 类型的数据库操作任务来完成上述过程：
 \begin{scriptcode}
 GID;ID;[d|D];TASK;PHASE
 \end{scriptcode}
@@ -392,9 +392,9 @@ GID;ID;[d|D];TASK;PHASE
 会自动重启；如果连续 3 次自动重启都失败，批处理任务将退出。
 \end{nbeae}
 
-批处理任务一般以周为单位进行处理。每个季度有三周(每月一周)的数据，
-因此通常会生成三个批处理任务定义文件。例如：对于第二季度的车牌识别数据，会生成三个批处理配置文件:lp4.cfg,
-lp5.cfg, lp6.cfg,分别代表 4、5、6 月份的数据。要完成第二季度车牌识别数据挖
+批处理任务一般以周为单位进行处理。每个季度有三周（每月一周）的数据，
+因此通常会生成三个批处理任务定义文件。例如：对于第二季度的车牌识别数据，会生成三个批处理配置文件：lp4.cfg，
+lp5.cfg， lp6.cfg，分别代表 4、5、6 月份的数据。要完成第二季度车牌识别数据挖
 掘，就需要执行三个批处理任务：
 \begin{examplecode}
 $ bin/master.sh -f fcd4.cfg run
@@ -426,7 +426,7 @@ $ bin/master.sh -f fcd6.cfg run
 $ bin/master.sh -f lp4.cfg status
 \end{examplecode}
 
-\smalltitle{持续查看批处理状态,不断刷新(每 10 秒刷新一次)}
+\smalltitle{持续查看批处理状态，不断刷新（每 10 秒刷新一次）}
 \begin{examplecode}
 $ bin/master.sh -f lp4.cfg -n 10 status
 \end{examplecode}

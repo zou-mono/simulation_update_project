@@ -21,11 +21,11 @@ BRT 等系统。宏观交通模型基于“四阶段”理论，标定了城市�
 的信息，从而满足这两个层次研究的需求。
 
 \subsection{模型范围}
-模型范围为全深圳市域。全市交通小区共 1137 个,其中普通小区 1071 个,
+模型范围为全深圳市域。全市交通小区共 1137 个，其中普通小区 1071 个，
 火车站、机场、港口、口岸、国省道、规划城际轨道出入口等特殊交通小区 66个。全市模型交通小区范围如
 图\ref{fig:模型交通小区示意图}所示。
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth]{chp04_模型交通小区示意图.jpg}
   \caption{模型交通小区示意图\label{fig:模型交通小区示意图} }
@@ -77,7 +77,7 @@ BRT 等系统。宏观交通模型基于“四阶段”理论，标定了城市�
 \subsection{宏观模型架构}
 模型整体架构采用四阶段交通模型，框架图如图\ref{fig:chp04_宏观交通模型框架图}所示。
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
   \includegraphics[width=0.5\textwidth]{chp04_宏观交通模型框架图.jpg}
   \caption{宏观交通模型框架图\label{fig:chp04_宏观交通模型框架图} }
@@ -139,7 +139,7 @@ OD 通过均衡模型，进行交通分配
 \item 在 PTV 模型中运行已设置好的 Procedure，如图\ref{fig:chp04_PTV设置的procedure.jpg}所示：
 \end{nbeae}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
   \includegraphics[width=0.8\textwidth]{chp04_PTV设置的procedure.jpg}
   \caption{PTV设置的 procedure\label{fig:chp04_PTV设置的procedure.jpg} }
@@ -251,7 +251,7 @@ OD 通过均衡模型，进行交通分配
 境界线调查数据获得分时段分方式 OD，因此主要更新了对外交通模型。图\ref{fig:chp04_现状模型更新流程}
 是现状模型更新的流程。
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth]{chp04_现状模型更新流程.jpg}
   \caption{现状模型更新流程\label{fig:chp04_现状模型更新流程} }
@@ -261,7 +261,7 @@ OD 通过均衡模型，进行交通分配
 合交通网络、小汽车保有量等社会经济数据、收费等政策量化值。 输入数据更新
 后，运行交通模型，更新相关输出图表，详见图\ref{fig:chp04_规划年模型更新流程}所示。
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
   \includegraphics[width=0.7\textwidth]{chp04_规划年模型更新流程.jpg}
   \caption{规划年模型更新流程\label{fig:chp04_规划年模型更新流程} }
@@ -272,7 +272,7 @@ OD 通过均衡模型，进行交通分配
 交通模型综合交通网络包括道路网络、常规公交网络、轨道交通网络、长途
 大巴网络。图\ref{fig:chp04_模型综合网络}是综合交通网络的详细结构。
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
   \centering
   \includegraphics[width=0.7\textwidth]{chp04_模型综合网络.jpg}
   \caption{模型综合网络\label{fig:chp04_模型综合网络} }
@@ -401,7 +401,7 @@ C{0.1\textwidth}|C{0.1\textwidth}|C{0.1\textwidth}|C{0.07\textwidth}|C{0.08\text
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{chp04_深港跨界日均通关旅客人次.jpg}
-  \caption{深港跨界日均通关旅客人次 \protect\footnotemark\label{fig:chp04_深港跨界日均通关旅客人次}}
+  \caption[深港跨界日均通关旅客人次]{深港跨界日均通关旅客人次 \protect\footnotemark\label{fig:chp04_深港跨界日均通关旅客人次}}
 \end{figure}
 \footnotetext{{2016 年数据来源于深圳边防检查总站提供 10 月的一周数据及 10 月 15 日--11 月 15日一月总的数据， 2015 年来源香港北来南往报告， 2014 年及以前来源 2014 深港莞惠跨界交通调查。}}
 
@@ -413,7 +413,7 @@ C{0.1\textwidth}|C{0.1\textwidth}|C{0.1\textwidth}|C{0.07\textwidth}|C{0.08\text
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth]{chp04_历年深圳市铁路发送量统计情况图.jpg}
-  \caption{历年深圳市铁路发送量统计情况图 \protect\footnotemark} \label{fig:chp04_历年深圳市铁路发送量统计情况图}
+  \caption[历年深圳市铁路发送量统计情况图]{历年深圳市铁路发送量统计情况图 \protect\footnotemark} \label{fig:chp04_历年深圳市铁路发送量统计情况图}
 \end{figure}
 \footnotetext{数据来源于深圳市统计年鉴}
 
@@ -665,10 +665,10 @@ Data.vbs 页面的数据。
 
 \noindent{其中：}
 \begin{para}
-\item[$P(1+)_i$]：第$i$小区拥有一辆及以上车的家庭比率
-\item[$P(2+)_i$]：第$i$小区拥有两辆及以上车的家庭比率
-\item[$I_i$]：第$i$小区的家庭平均收入
-\item[$f(park)$]：停车惩罚量
+\item[$P(1+)_i$] 第$i$小区拥有一辆及以上车的家庭比率
+\item[$P(2+)_i$] 第$i$小区拥有两辆及以上车的家庭比率
+\item[$I_i$] 第$i$小区的家庭平均收入
+\item[$f(park)$] 停车惩罚量
 \end{para}
 
 既有模型构建网络中仅有 22 公里轨道网络，轨道可达性对拥车影响不大。
@@ -770,7 +770,7 @@ B{0.12\textwidth}|B{0.12\textwidth}|C{0.06\textwidth}|}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{chp04_全市行政区轨道出行OD分布.jpg}
+  \includegraphics[width=0.8\textwidth]{chp04_全市行政区轨道出行OD分布.jpg}
   \caption{全市行政区轨道出行OD分布\label{fig:chp04_全市行政区轨道出行OD分布} }
 \end{figure}
 
@@ -781,7 +781,7 @@ B{0.12\textwidth}|B{0.12\textwidth}|C{0.06\textwidth}|}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{chp04_全市行政区常规公交出行OD分布.jpg}
+  \includegraphics[width=0.8\textwidth]{chp04_全市行政区常规公交出行OD分布.jpg}
   \caption{全市行政区常规公交出行OD分布\label{fig:chp04_全市行政区常规公交出行OD分布} }
 \end{figure}
 
@@ -791,13 +791,133 @@ B{0.12\textwidth}|B{0.12\textwidth}|C{0.06\textwidth}|}
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{chp04_全市行政区出租车出行OD分布.jpg}
+  \includegraphics[width=0.8\textwidth]{chp04_全市行政区出租车出行OD分布.jpg}
   \caption{全市行政区出租车出行OD分布\label{fig:chp04_全市行政区出租车出行OD分布} }
 \end{figure}
 
 \section{模型更新主要成果}
 \subsection{人口及岗位分布}
-\smalltitle{现状人口岗位分布}
+\subsubsection{现状人口岗位分布}
+2017 年深圳市常住人口 1253 万人，人口密度为 1.2 万人/平方公里。原特区内人口 413 万人，
+占全市 33\%；原特区外人口 840 万，占全市人口的 67\%。福田区人口密度最高，达 1.8 万人/公里。
+
+\subsubsection{远期人口岗位分布}
+远期深圳市内岗位约 1300-1500 万，居住人口约 2000-2100 万，居住人口中
+从业人口约 1300 万，岗位大于从业人口。预计远期居住在临深都市圈范围内的
+深圳从业者人口在 150-200 万之间。远期人口岗位分布保留上一年度预测结果。
+
+\subsection{出行量及出行结构}
+全市机动化出行总量 1931 万人次/日，其中市内机动化出行总量为 1679 万
+人次，由居民市内出行 1500 万人次/日和流动人口市内出行 179 万人次构成。
+日均对外客流量约 225 万人次，占机动化出行总量 13\%。
+
+全市机动化出行方式中，公共交通（包括公共大巴、地铁）出行分担率为
+42\%，小汽车(含网约小汽车)分担率为 46\%，其他（摩托车、助动车）分担率
+为 6\%，单位班车（含校车）分担率为 7\%，出租车分担率 3\%。
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.55\textwidth]{chp04_机动化出行分担率图.jpg}
+  \caption{机动化出行分担率图\label{fig:chp04_机动化出行分担率图} }
+\end{figure}
+
+\subsection{出行分布}
+联系中心区之间的东、中、西三条轴向联系继续加强，西部走廊最强。在
+2010-2016 年，龙岗与南山区之间的出行量增长最快。
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.75\textwidth]{chp04_全市行政区出行OD分布.jpg}
+  \caption{全市行政区出行OD分布\label{fig:chp04_全市行政区出行OD分布} }
+\end{figure}
+
+%\enlargethispage{25pt}
+
+\subsection{轨道客流特征}
+\subsubsection{现状轨道客流基本指标}
+轨道全网平均客运强度为 1.6 万人次/公里/日，比 2015 年(1.7 万人次/公里
+/日)下降了 9\%。4 号线为客流强度最高的线路，客流强度达 2.8 万人次/公里/
+日；1 号线客运强度次之，为 2.6 万人次/公里/日。7 号线客运强度已达到 1.3 人
+次/公里/日。11 号线末端客流有限，客运强度仅 0.6 万人次/公里/日。
+
+\renewcommand{\arraystretch}{0.8}
+\begin{longtable}[c] {|C{0.1\textwidth}|B{0.06\textwidth}|B{0.15\textwidth}|B{0.18\textwidth}|B{0.15\textwidth}|
+B{0.18\textwidth}|}
+  \caption{轨道交通现状运营情况统计表\label{tbl:轨道交通现状运营情况统计表}}
+  \hline
+  \multirow[c]{3}{*}{\bfseries 线路} & \multirow[c]{3}{*}{\parbox{\linewidth}{\bfseries 长度(km)}} &
+  \multicolumn{2}{c|}{\bfseries 2016年} & \multicolumn{2}{c|}{\bfseries 2017年} \\ \cline{3-6}
+
+  & & {\bfseries 客运量(万人次/日)} & {\bfseries 客运强度(万人次/km/日)} & 
+{\bfseries 客运量(万人次/日)} & {\bfseries 客运强度(万人次/km//日)} \\\hline
+1号线 & 40.5 & 125.1 & 3.1 & 105 & 2.6 \\\hline
+2号线 & 35.8 & 53.2 & 1.5 & 48 & 1.3 \\\hline
+3号线 & 41.6 & 77 & 1.9 & 72 & 1.7 \\\hline
+4号线 & 20.3 & 65.3 & 3.2 & 57 & 2.8 \\\hline 
+5号线 & 40 & 69.2 & 1.7 & 73 & 1.8 \\\hline
+7号线 & 30.2 & 41.8 & 1.4 & 38 & 1.3 \\\hline
+9号线 & 25.4 & 24.5 & 1.0 & 24 & 0.9 \\\hline
+11号线 & 51.7 & 29.2 & 0.6 & 33 & 0.6 \\\hline
+合计 & 285.5 & 485.3 & 1.7 & 450 & 1.6 \\\hline
+\end{longtable}
+
+各线路的峰值与客运量存在明显对应关系。各线路的时间分布情况差异不大，
+早晚高峰明显集聚，早高峰峰值均略高于晚高峰峰值。
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{chp04_各轨道线路客流时间分布.jpg}
+  \caption{各轨道线路客流时间分布\label{fig:chp04_各轨道线路客流时间分布} }
+\end{figure}
+
+\subsubsection{远期轨道线路客流特征}
+预测远期城市轨道客运量约 2780 万人次/日，平均客运强度 2.2 万人次/公里。
+经济效益较好。轨道平均换乘系数 1.7，轨道出行量约 1635 万人次/日。城际线
+286 公里，承担了 392 万人次出行，客运强度达到 1.3 万人次/公里。轨道客运周
+转量 3 亿公里/日，轨道线路平均运距 10.8 公里，轨道快线平均运距 13.5 公里。
+
+轨网建成后全市公共交通占机动化出行比例将达 73\%，占公共交通的比例约
+达到 66\%，基本实现交通发展战略提出的公共/轨道分担率“70/70”的交通结构
+目标，轨道交通在全市客运交通体系中将发挥主体作用，城市综合交通效益较好。
+
+\subsubsection{现状轨道站点客流特征}
+现状进出站客流量排名前 3 位依次是车公庙站、深圳北站、大剧院站，排名
+前 9 位的进出站客流量均超过了 10 万人次/日。
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{chp04_现状轨道站进出站客流量排名.jpg}
+  \caption{现状轨道站进出站客流量排名\label{fig:chp04_现状轨道站进出站客流量排名} }
+\end{figure}
+
+现状换乘站客流量排名前 3 位依次是会展中心站、宝安中心站、车公庙站，
+排名前 5 位的换乘站客流量均超过了 10 万人次/日。
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{chp04_现状轨道站换乘站客流量排名.jpg}
+  \caption{现状轨道站换乘站客流量排名\label{fig:chp04_现状轨道站换乘站客流量排名} }
+\end{figure}
+
+\section{模型应用}
+宏观模型的更新工作与项目紧密结合，本年度宏观模型已应用在以下重大项目中：
+
+\begin{cit}
+\item 珠三角城际轨道深圳地区布局规划（修编）
+\item 深圳市职住平衡现状趋势及对策分析
+\item 深圳市货运物流场站规划评估和实施对策研究
+\item 笋岗地区空间发展规划
+\item 龙岗区宝龙街道战略发展规划
+\item 轨道交通五期建设规划
+\item 罗湖区重大交通设施规划研究
+\end{cit}
+
+
+
+
+
+
+
 
 
 

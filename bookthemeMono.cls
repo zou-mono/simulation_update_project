@@ -336,6 +336,10 @@
 
 \newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 公式
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mathchardef\mhyphen="2D
 % \AtBeginDocument{%
 %   \expandafter\renewcommand\expandafter\subsection\expandafter{%
 %     \expandafter\@fb@secFB\subsection
